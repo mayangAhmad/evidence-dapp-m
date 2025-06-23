@@ -1,0 +1,293 @@
+[
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "caseId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "police",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "forensic",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "lawyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "judge",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "initialEvidence",
+          "type": "string"
+        }
+      ],
+      "name": "CaseCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "caseId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "cid",
+          "type": "string"
+        }
+      ],
+      "name": "EvidenceAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "caseId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "reportCid",
+          "type": "string"
+        }
+      ],
+      "name": "ForensicReportUploaded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "caseId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ReportVerified",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_caseId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_cid",
+          "type": "string"
+        }
+      ],
+      "name": "addEvidenceToCase",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "caseCounter",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "cases",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "police",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "forensic",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "lawyer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "judge",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "forensicReport",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "reportVerified",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_forensic",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_lawyer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_judge",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_initialEvidence",
+          "type": "string"
+        }
+      ],
+      "name": "createCaseWithRolesAndEvidence",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_caseId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getCase",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "police",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "forensic",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "lawyer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "judge",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "forensicReport",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "reportVerified",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_caseId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getEvidenceCIDs",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_caseId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_reportCid",
+          "type": "string"
+        }
+      ],
+      "name": "uploadForensicReport",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_caseId",
+          "type": "uint256"
+        }
+      ],
+      "name": "verifyReport",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
